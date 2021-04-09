@@ -1,5 +1,6 @@
 ### A list of some of the time zone ids to use in API
 
+### For windows
 `Dateline Standard Time`
 `UTC-11`
 `Samoa Standard Time`
@@ -97,3 +98,13 @@
 `Fiji Standard Time`
 `Kamchatka Standard Time`
 `Tonga Standard Time`
+
+### For Linux
+
+Africa      Brazil   EST      GB         HST       Japan      NZ       Portugal   US
+America     CET      EST5EDT  GB-Eire    Hongkong  Kwajalein  NZ-CHAT  ROC        UTC
+Antarctica  CST6CDT  Egypt    GMT        Iceland   Libya      Navajo   ROK        Universal
+Arctic      Canada   Eire     GMT+0      Indian    MET        PRC      Singapore  W-SU
+Asia        Chile    Etc      GMT-0      Iran      MST        PST8PDT  SystemV    WET
+Atlantic    Cuba     Europe   GMT0       Israel    MST7MDT    Pacific  Turkey     Zulu
+Australia   EET      Factory  Greenwich  Jamaica   Mexico     Poland   UCT

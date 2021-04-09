@@ -14,6 +14,21 @@ services:
     ports:
       - 8080:8080
 
+  todo_app:
+    container_name: todo
+    build:
+        context: ./
+        dockerfile: src/WebAPI/Dockerfile
+    volumes:
+      - ~/.aspnet/https:/https:ro
+    ports:
+      - "5000:80"
+      - "5001:443"
+    env_file:
+      - '.env'
+    depends_on:
+      - db
+    restart: on-failure
   rabbitmq:
     image: rabbitmq:3-management-alpine
     container_name: 'rabbitmq'

@@ -68,7 +68,7 @@ namespace WebAPI
             }
 
             app.UseHangfireServer();
-            app.UseHangfireDashboard();
+            app.UseHangfireDashboard("/hangfire", new DashboardOptions { Authorization = new[] { new HangfireDashboardAuthorizationFilter() } });
 
             app.UseHttpsRedirection();
 

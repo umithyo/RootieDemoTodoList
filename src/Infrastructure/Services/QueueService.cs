@@ -30,7 +30,7 @@ namespace Infrastructure.Services
 
         public void Consume(QueueOptions queueOptions, Action<string> consumed)
         {
-            var factory = new ConnectionFactory() { HostName = "localhost" };
+            var factory = new ConnectionFactory() { HostName = "rabbitmq" };
             var connection = factory.CreateConnection();
             var channel = connection.CreateModel();
             var q = channel.QueueDeclare(queue: queueOptions.Name,
@@ -54,7 +54,7 @@ namespace Infrastructure.Services
 
         public void Send(QueueOptions queueOptions, string message)
         {
-            var factory = new ConnectionFactory() { HostName = "localhost" };
+            var factory = new ConnectionFactory() { HostName = "rabbitmq" };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
