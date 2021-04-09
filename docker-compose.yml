@@ -1,0 +1,29 @@
+﻿version: "3.4"
+services:
+  db:
+    container_name: db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 123
+    ports:
+      - 5432:5432
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ./volumes/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ./volumes/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+
+networks:
+  default:
+    name: rootie_network
